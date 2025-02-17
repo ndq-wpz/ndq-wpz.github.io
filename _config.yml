@@ -1,5 +1,35 @@
-social_links:
-  - name: "LinkedIn"
-    url: "https://www.linkedin.com/in/yourname/"
-  - name: "GitHub"
-    url: "https://github.com/yourname"
+title: "Tên của bạn hoặc tên trang web"
+description: "Mô tả về bạn hoặc trang web của bạn"
+
+
+author:
+  avatar: "profile.png"
+  name: "Tên của bạn"
+  bio: "Mô tả ngắn gọn về bạn"
+  location: "Vị trí của bạn"
+  employer: "Tên công ty hoặc tổ chức của bạn"
+
+
+twitter: "Tên người dùng của bạn"
+github: "Tên người dùng GitHub của bạn"
+linkedin: "Tên người dùng LinkedIn của bạn"
+
+
+og_image: "path/to/your/image.jpg"
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+
+
+paginate: 5
