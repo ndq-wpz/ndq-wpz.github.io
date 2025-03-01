@@ -253,10 +253,15 @@ main {
     margin: 0 auto;
 }
 
-.about-image {
-    flex: 1;
-    max-width: 350px;
-}
+.circular {
+    width: 500px; /* Điều chỉnh kích thước */
+    height: 500px; /* Đảm bảo width = height */
+    border-radius: 50%; /* Biến ảnh thành hình tròn */
+    object-fit: cover; /* Cắt ảnh cho vừa khung tròn */
+    display: block; /* Tránh khoảng trắng không mong muốn */
+  }
+  
+  
 
 .about-image img {
     border-radius: 10px;
@@ -411,6 +416,7 @@ footer {
     max-width: 600px;
     margin: 0 auto 40px;
 }
+
 
 .contact-info h2 {
     margin-bottom: 30px;
@@ -701,3 +707,12 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+.circular {
+    width: 150px;        /* Điều chỉnh kích thước theo ý muốn */
+    height: 150px;       /* Đảm bảo chiều cao bằng chiều rộng */
+    border-radius: 50%;  /* Tạo hiệu ứng hình tròn */
+    object-fit: cover;   /* Cắt xén ảnh cho vừa khung nếu cần */
+  }
+  
+
