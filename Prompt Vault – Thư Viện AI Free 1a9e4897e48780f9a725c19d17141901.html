@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>
+Prompt Vault – Thư Viện AI Free </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1a9e4897-e487-80f9-a725-c19d17141901" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_10.jpg" style="object-position:center 40%"/><h1 class="page-title"><br/><br/><strong>Prompt Vault – Thư Viện AI Free </strong></h1><p class="page-description"></p></header><div class="page-body"><p id="1a9e4897-e487-81ee-987f-e8bd483a9441" class="">by <em>Nguyen Dinh Quang</em></p><p id="1a9e4897-e487-811f-bc33-f68446030d96" class="">
+</p><table id="1a9e4897-e487-8184-9991-dc9d55d94ee5" class="simple-table"><thead class="simple-table-header"><tr id="1a9e4897-e487-812f-a0ec-d35589015017"><th id="vrpG" class="simple-table-header-color simple-table-header" style="width:106px"><strong>Tên prompt</strong></th><th id="jufL" class="simple-table-header-color simple-table-header" style="width:101px">🎯 <strong>Mục Tiêu</strong></th><th id="jfk=" class="simple-table-header-color simple-table-header" style="width:233px"><strong>Cấu trúc</strong></th><th id="KxsC" class="simple-table-header-color simple-table-header" style="width:432.65625px"><strong>Mẫu prompt</strong></th><th id="xn&gt;c" class="simple-table-header-color simple-table-header" style="width:85px"><strong>Ghi chú</strong></th></tr></thead><tbody><tr id="1a9e4897-e487-8191-80ff-efa41c07675f"><td id="vrpG" class="" style="width:106px"><strong>GRWC - Prompt cho việc tra cứu thông tin một cách chuyên sâu</strong></td><td id="jufL" class="" style="width:101px">Tra cứu thông tin</td><td id="jfk=" class="" style="width:233px">Mục tiêu/Định dạng/Cảnh báo/Ngữ cảnh</td><td id="KxsC" class="" style="width:432.65625px">Tôi muốn có danh sách những cung đường leo núi tầm trung hay nhất trong phạm vi hai giờ lái xe từ San Francisco.<br/>Mỗi cung đường nên mang đến một cuộc phiêu lưu thú vị và độc đáo, đồng thời ít được biết đến hơn.<br/><br/><strong>Đối với mỗi cung đường, hãy trả về tên của nó như tôi sẽ tìm thấy trên AllTrails, sau đó cung cấp địa chỉ bắt đầu của cung đường, địa chỉ kết thúc, khoảng cách, thời gian lái xe, thời gian leo núi và điều gì khiến nó trở thành một cuộc phiêu lưu thú vị và độc đáo.<br/>Trả về 3 cung đường hàng đầu.<br/></strong><br/><br/><em>Hãy cẩn thận để đảm bảo rằng tên của cung đường là chính xác, rằng nó thực sự tồn tại và rằng thời gian là đúng.</em><br/><br/><span style="border-bottom:0.05em solid">Về bối cảnh: tôi và bạn gái đi leo núi rất nhiều! Chúng tôi đã đi hầu hết tất cả các cung đường leo núi ở San Francisco, dù là Presidio hay Công viên Cổng Vàng. Chúng tôi thực sự muốn ra khỏi thành phố – gần đây chúng tôi đã leo núi Mount Tam, toàn bộ hành trình từ chân cầu thang đến Stinson – nó thực sự rất dài và lần này chúng tôi muốn có một cung đường khác để tận hưởng vào cuối tuần này! Khung cảnh đại dương vẫn sẽ rất tuyệt. Chúng tôi thích đồ ăn ngon. Một điều tôi yêu thích ở cung đường Mount Tam là nó kết thúc bằng một bữa tiệc nhỏ (vào thị trấn để ăn sáng!). Những hầm chứa tên lửa cũ và các công trình gần Discovery Point thì cũng thú vị, nhưng tôi đã đi cung đường đó khoảng 20 lần rồi. Chúng tôi sẽ không gặp nhau trong vài tuần tới (cô ấy phải ở lại LA để làm việc), vì vậy lần này sự độc đáo thực sự rất quan trọng.</span></td><td id="xn&gt;c" class="" style="width:85px">Đang thử nghiệm</td></tr><tr id="1a9e4897-e487-819b-a5a6-f2a701535fe9"><td id="vrpG" class="" style="width:106px"><strong>Tree of Thought Prompting</strong></td><td id="jufL" class="" style="width:101px"><strong>“cây tư duy”</strong>, giúp AI phân tích và giải quyết vấn đề qua nhiều bước logic</td><td id="jfk=" class="" style="width:233px">1. <strong>Divergent Thinking (Suy nghĩ phân nhánh):</strong> Đưa ra nhiều phương án khác nhau.<br/>2. <br/><strong>Evaluation (Đánh giá):</strong> Phân tích ưu, nhược điểm của từng phương án.<br/>3. <br/><strong>Selection &amp; Reasoning (Chọn lựa và giải thích):</strong><br/>Chọn phương án tốt nhất và giải thích lý do.<br/></td><td id="KxsC" class="" style="width:432.65625px">“Bạn là một chuyên gia về sáng tạo nội dung trên TikTok. Hãy sử dụng phương pháp ‘Tree of Thought’ để giúp tôi quyết định chủ đề phù hợp.<br/>• <br/><strong>Bước 1 (Divergent Thinking):</strong> Đề xuất 3 chủ đề khác nhau, nêu rõ ưu và nhược điểm của từng chủ đề.<br/>• <br/><strong>Bước 2 (Evaluation):</strong> Đánh giá các chủ đề dựa trên tiềm năng viral, độ cạnh tranh và khả năng xây dựng cộng đồng.<br/>• <br/><strong>Bước 3 (Selection):</strong> Chọn chủ đề tối ưu nhất và giải thích lý do.”</td><td id="xn&gt;c" class="" style="width:85px">Hoạt động tốt hơn với Deepseek</td></tr><tr id="1a9e4897-e487-8144-aab1-ea6e5790f691"><td id="vrpG" class="" style="width:106px"><strong>‘RAPES’</strong></td><td id="jufL" class="" style="width:101px"></td><td id="jfk=" class="" style="width:233px">• <strong>R (Role): Đóng vai gì?</strong> – Đặt AI vào vai trò cụ thể.<br/>• <br/><strong>A (Action): Nhiệm vụ cần làm gì?</strong> – Cụ thể và rõ ràng.<br/>• <br/><strong>P (Parameter): Các yêu cầu hoặc giới hạn.</strong> – Ví dụ: Số chữ, giọng điệu.<br/>• <br/><strong>E (Example): Cho ví dụ mẫu (nếu có).</strong><br/>• <br/><strong>S (Style): Phong cách, giọng điệu cần thể hiện.</strong></td><td id="KxsC" class="" style="width:432.65625px">“Hãy đóng vai một chuyên gia content marketing. <strong>Viết bài quảng cáo giới thiệu son môi mới của thương hiệu X trong vòng 150 từ</strong>. <em>Giọng điệu cuốn hút, nhắm đến khách hàng nữ trẻ (18-25 tuổi)</em>. <span style="border-bottom:0.05em solid">Đảm bảo có tiêu đề thu hút và kết bài kêu gọi hành động.”</span></td><td id="xn&gt;c" class="" style="width:85px">Đang thử nghiệm</td></tr><tr id="1a9e4897-e487-8157-82ae-e75107059f9d"><td id="vrpG" class="" style="width:106px"><strong>5 Cs of High-Converting Landing Pages</strong></td><td id="jufL" class="" style="width:101px"></td><td id="jfk=" class="" style="width:233px">• Clarity - <strong>Rõ ràng</strong> – Tập trung vào một thông điệp chính để tránh gây xao nhãng và nhấn mạnh lợi ích hơn là tính năng.<br/>• Context - <br/><strong>Ngữ cảnh</strong> – Giải thích rõ cách sản phẩm hoặc dịch vụ mang lại giá trị.<br/>• Creativity - <br/><strong>Sáng tạo</strong> – Gợi ý các hình ảnh hoặc yếu tố đa phương tiện hấp dẫn để củng cố thông điệp.<br/>• Call to Action - <br/><strong>Kêu gọi hành động</strong> – Giảm rào cản bằng cách xử lý các lo ngại (ví dụ: “hủy bất cứ lúc nào”, “miễn phí vận chuyển và hoàn trả”).<br/>• Credibility - <br/><strong>Độ tin cậy</strong> – Xây dựng niềm tin thông qua đánh giá khách hàng, bằng chứng xã hội và các yếu tố tạo sự uy tín như logo đối tác.</td><td id="KxsC" class="" style="width:432.65625px">Tạo một trang landing page hoàn chỉnh, tối ưu chuyển đổi cao cho chiến dịch truyền thông trả phí của tôi. Nội dung đầu ra phải bao gồm toàn bộ phần văn bản và mô tả hình ảnh, được cấu trúc rõ ràng để đạt hiệu quả cao nhất về mặt thuyết phục và chuyển đổi. Đây phải là một trang landing page đầy đủ, không chỉ là một dàn ý, và chỉ cần tùy chỉnh nhẹ để phù hợp với sản phẩm hoặc dịch vụ cụ thể của tôi.<strong><br/>Trước khi viết, hãy hỏi tôi những câu hỏi quan trọng sau:<br/></strong><br/>• Trang landing page này dành cho sản phẩm hoặc dịch vụ nào?<br/>• Đối tượng mục tiêu là ai? (Ví dụ: B2B, B2C, một nhóm khách hàng cụ thể)<br/>• Mục tiêu chính của trang landing page là gì? (Ví dụ: thu thập khách hàng tiềm năng, mua hàng trực tiếp, đăng ký tài khoản)<br/>• Kêu gọi hành động (CTA) chính là gì? (Ví dụ: “Mua ngay”, “Nhận báo giá miễn phí”, “Đăng ký ngay”)<br/>• Có bất kỳ yêu cầu nào về thương hiệu, phong cách hoặc chi tiết bổ sung không?<br/>Khi tôi cung cấp thông tin này, hãy viết toàn bộ trang landing page dựa trên các nguyên tắc sau:<br/><strong><br/>Cấu trúc trang landing page dựa trên 5C:<br/></strong><br/>• <br/><strong>Rõ ràng (Clarity):</strong> Truyền tải một thông điệp chính, không gây xao nhãng. Tập trung vào giá trị cốt lõi của sản phẩm/dịch vụ. Luôn nhấn mạnh lợi ích thay vì chỉ liệt kê tính năng.<br/>• <br/><strong>Ngữ cảnh (Context):</strong> Giải thích ngắn gọn và súc tích về cách sản phẩm/dịch vụ mang lại giá trị cho khách hàng.<br/>• <br/><strong>Sáng tạo (Creativity):</strong> Gợi ý các yếu tố hình ảnh hoặc đa phương tiện phù hợp để tăng mức độ tương tác. Ưu tiên video trực tiếp hoặc hoạt ảnh giúp làm rõ nội dung trang, và mô tả ý tưởng này cho tôi.<br/>• <br/><strong>Kêu gọi hành động (Call to Action):</strong> Giảm rào cản và xóa bỏ các trở ngại tâm lý. Ví dụ: Đối với dùng thử miễn phí có thể nói “hủy bất kỳ lúc nào”, hoặc với sản phẩm thương mại điện tử có thể nhấn mạnh “miễn phí vận chuyển và hoàn trả”.<br/>• <br/><strong>Độ tin cậy (Credibility):</strong> Củng cố niềm tin bằng đánh giá khách hàng, bằng chứng xã hội và các yếu tố tạo sự tin tưởng như logo khách hàng, lời chứng thực hoặc các dữ kiện giúp khách hàng cảm thấy an tâm.<strong><br/>Tạo một trang landing page hiện đại, thu hút và có khả năng chuyển đổi cao nhất có thể.<br/>Sau khi tạo trang, thực hiện các bước sau:<br/></strong><br/>1. <br/><strong>Đánh giá lại trang landing page</strong> dựa trên tiêu chí rõ ràng, thuyết phục và đầy đủ nội dung.<br/>2. <br/><strong>Hỏi tôi xem tôi có hài lòng không hoặc cần chỉnh sửa gì thêm.</strong><br/>3. <br/><strong>Đề xuất các tùy chọn cải thiện</strong>, chẳng hạn như:<br/><br/>    ◦ “Bạn có muốn thử các tiêu đề thay thế không?”<br/>    ◦ “Bạn có muốn CTA mạnh mẽ hơn không?”<br/>    ◦ “Chúng ta có nên thêm nhiều bằng chứng xã hội hơn không?”<br/>4. <br/><strong>Sau khi được duyệt, viết một prompt chi tiết cho ChatGPT hoặc công cụ tương tự</strong>, hướng dẫn rõ ràng toàn bộ cách xây dựng trang landing page.</td><td id="xn&gt;c" class="" style="width:85px">Đang thử nghiệm</td></tr><tr id="1a9e4897-e487-812b-b5ea-ef6340053622"><td id="vrpG" class="" style="width:106px">Tóm tắt</td><td id="jufL" class="" style="width:101px"></td><td id="jfk=" class="" style="width:233px">Tóm tắt nội dung quan trọng</td><td id="KxsC" class="" style="width:432.65625px">Tóm tắt [nội dung] trong [X] điểm chính</td><td id="xn&gt;c" class="" style="width:85px">Nêu rõ độ dài mong muốn</td></tr><tr id="1a9e4897-e487-818d-9701-d6878c9dea22"><td id="vrpG" class="" style="width:106px">Viết kịch bản TikTok giới thiệu sản phẩm</td><td id="jufL" class="" style="width:101px"></td><td id="jfk=" class="" style="width:233px">Tạo nội dung marketing</td><td id="KxsC" class="" style="width:432.65625px">&quot;Hãy đóng vai chuyên gia content marketing. Viết kịch bản TikTok 30 giây giới thiệu sản phẩm mới của thương hiệu X.<br/>• Mở đầu: Hook gây tò mò (5 giây)<br/>• Nội dung chính: 3 lợi ích nổi bật (20 giây)<br/>• Kết thúc: CTA (5 giây)<br/>• Giọng điệu: Vui vẻ, năng động.”<br/></td><td id="xn&gt;c" class="" style="width:85px">Đã thử nghiệm, phù hợp cho video TikTok ngắn dưới 30s.</td></tr></tbody></table><p id="1a9e4897-e487-81d0-90f6-e38c195e8951" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
