@@ -716,3 +716,33 @@ footer {
   }
   
 
+/*định dạng info cuối blog*/
+.post-footer {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-top: 2px solid #ddd;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.post-footer h3 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.contact-icons a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: #0073b1;
+    font-weight: bold;
+}
+
+.contact-icons img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
