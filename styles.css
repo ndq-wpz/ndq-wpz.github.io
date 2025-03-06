@@ -708,6 +708,11 @@ footer {
     }
 }
 
+body {
+    color: #ffff; /* Màu trắng */
+}
+
+
 .circular {
     width: 150px;        /* Điều chỉnh kích thước theo ý muốn */
     height: 150px;       /* Đảm bảo chiều cao bằng chiều rộng */
