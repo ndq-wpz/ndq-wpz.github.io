@@ -14,6 +14,27 @@
     <meta name="author" content="[Tên của bạn]">
 
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            /* background-color: #0a192f; (Tôi tạm ẩn dòng này để nó đồng bộ với màu nền footer hiện tại của bạn) */
+        }
+        
+        .social-icons a {
+            color: #8892b0; 
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #e65100; /* Đổi màu khi di chuột qua, bạn có thể thay bằng màu cam hoặc trắng tùy thích */
+        }
+    </style>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -48,6 +69,15 @@
         <!-- Portfolio Section -->
         <section id="portfolio">
             <h2>My Portfolio</h2>
+            <div style="width: 100%; display: flex; justify-content: center; margin: 30px 0;">
+                <iframe 
+                    src="https://banking-screener-jgs4cyyqhqmypuzsqgs46m.streamlit.app/?embed=true" 
+                    width="100%" 
+                    height="850px" 
+                    style="border: 1px solid #eaeaea; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);" 
+                    title="Hệ thống lọc cổ phiếu Ngân hàng">
+                </iframe>
+            </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <img src="images/project1.jpg" alt="Project 1">
@@ -111,14 +141,23 @@
             <h2>Contact Me</h2>
             <p>Email: <a href="dinhquangng24@gmail.com">dinhquangng24@gmail.com</a></p>
             <p>Phone: </p>
-            <div class="social-links">
-                <a href="https://github.com/" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-                <a href="https://twitter.com/" target="_blank">Twitter</a>
+            <div class="social-icons">
+                <a href="https://github.com/ndq-wpz" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ndq-wpz/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://goodreads.com/" target="_blank" aria-label="Goodreads">
+                    <i class="fab fa-goodreads-g"></i>
+                </a>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 NDQUANG. All rights reserved.</p>
+            <p>&copy; 2026 NDQUANG. All rights reserved.</p>
         </div>
     </footer>
 
