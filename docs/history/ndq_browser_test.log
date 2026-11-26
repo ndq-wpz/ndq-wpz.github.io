@@ -1,0 +1,13 @@
+hero Nguyen Dinh
+Quang. aurora aurora-drift
+project motion {'animation': 'ndq-project', 'opacity': '0.08', 'translate': '0px 38px'}
+width 320 {'w': 320, 'scroll': 320}
+width 375 {'w': 375, 'scroll': 375}
+width 390 {'w': 390, 'scroll': 390}
+width 540 {'w': 540, 'scroll': 540}
+width 680 {'w': 680, 'scroll': 680}
+width 768 {'w': 768, 'scroll': 768}
+width 1024 {'w': 1024, 'scroll': 1024}
+width 1280 {'w': 1280, 'scroll': 1280}
+width 1440 {'w': 1440, 'scroll': 1440}
+page errors []

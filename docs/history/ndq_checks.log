@@ -1,0 +1,11 @@
+PASS Output reproduces the current templates and browser sources
+PASS Unique IDs, anchors, and ARIA relationships resolve
+PASS Local HTML, CSS, PDF, font and icon paths resolve inside the output
+PASS One main heading, five sections, two employment records and two independent cases
+PASS No remote runtime assets, forms, analytics or raw workbooks shipped
+PASS January financial statements bridge to operating profit at cent precision
+PASS Monthly records, line classifications and units reconcile to the workbook
+PASS Unit and SKU denominators reconcile independently
+PASS Currency balances are separately rendered and the chart has a textual alternative
+PASS Portable HTML embeds identical PDF bytes, fonts and executable scripts
+10 check groups passed.
